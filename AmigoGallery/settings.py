@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'i7fp9gg42_9^*lt54%=krail&vpen+m2^#j7ozj!nlqiqq&*gn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'jovelshaju.pythonanywhere.com']
 
 
 # Application definition
@@ -117,5 +117,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+STATIC_ROOT = "/home/jovelshaju/AmigoGallery/static"
 
 STATIC_URL = '/static/'

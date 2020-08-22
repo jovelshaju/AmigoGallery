@@ -1,6 +1,6 @@
 import os
 import random
-from django.urls import reverse 
+from django.urls import reverse
 from django import forms
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
@@ -12,19 +12,19 @@ class LoginForm(forms.Form):
 def index(request):
     if request.method == "POST":
       MyLoginForm = LoginForm(request.POST)
-      
+
       if MyLoginForm.is_valid():
         name = MyLoginForm.cleaned_data['name']
         return HttpResponseRedirect(reverse("index")+name)
 
     else:
-        return render(request, "home/index.html")         
+        return render(request, "home/index.html")
 
 def amigo(response ,name):
     if(name.isalpha()):
         name = name.lower()
-        if(os.path.exists(f'./amigos/static/amigo/img/{name}')):
-            photos = os.listdir(f'./amigos/static/amigo/img/{name}')
+        if(os.path.exists(f'./AmigoGallery/static/amigo/img/{name}')):
+            photos = os.listdir(f'./AmigoGallery/static/amigo/img/{name}')
             photos +=photos[:]
             random.shuffle(photos)
             for i in range(len(photos)):
